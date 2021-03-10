@@ -86,11 +86,8 @@ namespace GreyconChallenge.Base
 
             foreach (HardDisk disk in _disks)
             {
-                HardDisk ndisk = new HardDisk();
+                HardDisk ndisk = new HardDisk(disk.Used, disk.Total);
 
-                ndisk.Total = disk.Total;
-                ndisk.Used = disk.Used;
-                
                 diskscopy.Add(ndisk);
             }
 

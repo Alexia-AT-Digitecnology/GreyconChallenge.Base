@@ -13,6 +13,17 @@ namespace GreyconChallenge.Base
         {
             
         }
+
+        public HardDisk(int used, int total)
+        {
+            if (used > total)
+            {
+                throw new HardDiskException("Can't create hard disk");
+            }
+            
+            _used = used;
+            _total = total;
+        }
         
         public int Used
         {
@@ -78,22 +89,12 @@ namespace GreyconChallenge.Base
 
         public static HardDisk GenerateRandom()
         {
-            HardDisk disk = new HardDisk();
-
             Random rnd = new Random();
 
-            //HACKME: Prevent exception
-            try
-            {
-                disk.Total = rnd.Next(1, 1000);
-                disk.Used = rnd.Next(1, disk.Total);
-            }
-            catch (Exception e)
-            {
-                
-            }
+            int total = rnd.Next(1, 1000);
+            int used = rnd.Next(1, total);
 
-            return disk;
+            return new HardDisk(used, total);
         }
     }
 }
