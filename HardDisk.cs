@@ -62,9 +62,18 @@ namespace GreyconChallenge.Base
                 throw new HardDiskException("Can't move data");
             }
 
-            _used -= size;
+            if (_used - size < 0)
+            {
+                dest.Used += _used;
+                
+                _used = 0;
+            }
+            else
+            {
+                _used -= size;
 
-            dest.Used += size;
+                dest.Used += size;    
+            }
         }
 
         public static HardDisk GenerateRandom()
