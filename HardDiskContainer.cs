@@ -9,6 +9,11 @@ namespace GreyconChallenge.Base
     {
         private List<HardDisk> _disks = new List<HardDisk>();
 
+        public HardDiskContainer()
+        {
+            
+        }
+
         public void AddDisk(HardDisk disk)
         {
             _disks.Add(disk);
