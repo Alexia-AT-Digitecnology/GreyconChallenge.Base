@@ -85,12 +85,12 @@ namespace GreyconChallenge.Base
             List<HardDisk> diskscopy = new List<HardDisk>(_disks.ToArray());
 
             // Make conciliation
-            bool dataMoved = false;
+            bool dataMoved = true;
             
             while (dataMoved == true)
             {
                 dataMoved = false;
-                
+
                 for (int i = diskscopy.Count - 1; i >= 0; i--)
                 {
                     if (diskscopy[i - 1].Free > 0 && i != 0)
@@ -116,7 +116,7 @@ namespace GreyconChallenge.Base
         public void Conciliate()
         {
             // Make conciliation
-            bool dataMoved = false;
+            bool dataMoved = true;
             
             while (dataMoved == true)
             {
