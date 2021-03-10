@@ -97,6 +97,12 @@ namespace GreyconChallenge.Base
                     {
                         dataMoved = true;
                         diskscopy[i].MoveData(diskscopy[i - 1].Free, diskscopy[i - 1]);
+                        
+                        for (int a = 0; a <= this.DiskCount() - 1; a++)
+                        {
+                            Console.WriteLine("Hard drive {0}: {1} MB total, {2} MB used, {3} MB free.", a + 1, this.GetDisk(a).Total, this.GetDisk(a).Used, this.GetDisk(a).Free);
+                        }
+                        
                     }
                 }
             }
@@ -128,6 +134,10 @@ namespace GreyconChallenge.Base
                     {
                         dataMoved = true;
                         _disks[i].MoveData(_disks[i - 1].Free, _disks[i - 1]);
+                        for (int a = 0; a <= this.DiskCount() - 1; a++)
+                        {
+                            Console.WriteLine("Hard drive {0}: {1} MB total, {2} MB used, {3} MB free.", a + 1, this.GetDisk(a).Total, this.GetDisk(a).Used, this.GetDisk(a).Free);
+                        }
                     }
                 }
             }
