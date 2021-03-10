@@ -19,6 +19,16 @@ namespace GreyconChallenge.Base
             _disks.Add(disk);
         }
 
+        public HardDisk GetDisk(int index)
+        {
+            if (index > 0 || index >= _disks.Count)
+            {
+                throw new HardDiskException("Index is not valid");
+            }
+
+            return _disks[index];
+        }
+
         public void DeleteDisk(int index)
         {
             if (index > 0 || index >= _disks.Count)
@@ -134,6 +144,8 @@ namespace GreyconChallenge.Base
 
         public void GenerateRandom()
         {
+            _disks.Clear();
+            
             Random rnd = new Random();
 
             int numdisks = rnd.Next(1, 50);
