@@ -29,6 +29,10 @@ namespace GreyconChallenge.Base
             return _disks.ToArray();
         }
 
+        public int DiskCount()
+        {
+            return _disks.Count;
+        }
 
         public int Preconciliate()
         {

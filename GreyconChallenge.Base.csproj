@@ -15,7 +15,7 @@
         <PackageProjectUrl>https://github.com/Alexia-AT-Digitecnology/GreyconChallenge.Base</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Alexia-AT-Digitecnology/GreyconChallenge.Base.git</RepositoryUrl>
         <RepositoryType>GIT</RepositoryType>
-        <PackageTags>Greycon,Challenge</PackageTags>
+        <PackageTags>Greycon,Challenge,Base</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
