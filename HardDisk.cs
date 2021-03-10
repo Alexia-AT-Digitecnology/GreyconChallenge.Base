@@ -16,6 +16,16 @@ namespace GreyconChallenge.Base
 
         public HardDisk(int used, int total)
         {
+            if (used < 1 || used > 1000)
+            {
+                throw new HardDiskException("Value must be between 1 and 1000");
+            }
+            
+            if (total < 1 || total > 1000)
+            {
+                throw new HardDiskException("Value must be between 1 and 1000");
+            }
+            
             if (used > total)
             {
                 throw new HardDiskException("Can't create hard disk");
