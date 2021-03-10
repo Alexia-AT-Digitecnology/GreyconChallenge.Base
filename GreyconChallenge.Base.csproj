@@ -6,11 +6,11 @@
         <Authors>Alexia Rodriguez</Authors>
         <Company>Greycon</Company>
         <Product>GreyconChallenge</Product>
-        <PackageId>GreyconCHallenge.Base</PackageId>
+        <PackageId>GreyconChallenge.Base</PackageId>
         <AssemblyVersion>0.1</AssemblyVersion>
         <FileVersion>0.1</FileVersion>
         <NeutralLanguage>en</NeutralLanguage>
-        <Description>Greycon CHallenge Base</Description>
+        <Description>Greycon Challenge Base</Description>
         <Copyright>2021 - Greycon</Copyright>
         <PackageProjectUrl>https://github.com/Alexia-AT-Digitecnology/GreyconChallenge.Base</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Alexia-AT-Digitecnology/GreyconChallenge.Base.git</RepositoryUrl>
