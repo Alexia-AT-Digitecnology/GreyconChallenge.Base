@@ -14,6 +14,16 @@ namespace GreyconChallenge.Base
             
         }
 
+        public void AddDisk(int used, int total)
+        {
+            HardDisk disk = new HardDisk();
+
+            disk.Total = total;
+            disk.Used = used;
+            
+            this.AddDisk(disk);
+        }
+
         public void AddDisk(HardDisk disk)
         {
             _disks.Add(disk);

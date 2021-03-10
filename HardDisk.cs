@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace GreyconChallenge.Base
 {
@@ -12,7 +13,7 @@ namespace GreyconChallenge.Base
         {
             
         }
-
+        
         public int Used
         {
             get => _used;
