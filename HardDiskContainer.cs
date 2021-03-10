@@ -93,7 +93,7 @@ namespace GreyconChallenge.Base
 
                 for (int i = diskscopy.Count - 1; i >= 0; i--)
                 {
-                    if (i != 0 && diskscopy[i - 1].Free > 0)
+                    if (i != 0 && _disks[i].Used > 0 && diskscopy[i - 1].Free > 0)
                     {
                         dataMoved = true;
                         diskscopy[i].MoveData(diskscopy[i - 1].Free, diskscopy[i - 1]);
@@ -130,7 +130,7 @@ namespace GreyconChallenge.Base
                 
                 for (int i = _disks.Count - 1; i >= 0; i--)
                 {
-                    if (i != 0 && _disks[i - 1].Free > 0)
+                    if (i != 0 && _disks[i].Used > 0 && _disks[i - 1].Free > 0)
                     {
                         dataMoved = true;
                         _disks[i].MoveData(_disks[i - 1].Free, _disks[i - 1]);
