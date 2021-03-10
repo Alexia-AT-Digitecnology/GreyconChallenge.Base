@@ -16,6 +16,11 @@ namespace GreyconChallenge.Base
 
         public void AddDisk(int used, int total)
         {
+            if (_disks.Count == 50)
+            {
+                throw new HardDiskException("Maximum number of disks exceeded");
+            }
+            
             HardDisk disk = new HardDisk(used, total);
             
             this.AddDisk(disk);
@@ -23,6 +28,11 @@ namespace GreyconChallenge.Base
 
         public void AddDisk(HardDisk disk)
         {
+            if (_disks.Count == 50)
+            {
+                throw new HardDiskException("Maximum number of disks exceeded");
+            }
+            
             _disks.Add(disk);
         }
 
