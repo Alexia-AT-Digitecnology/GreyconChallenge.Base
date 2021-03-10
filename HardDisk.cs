@@ -82,8 +82,16 @@ namespace GreyconChallenge.Base
 
             Random rnd = new Random();
 
-            disk.Total = rnd.Next(1, 1000);
-            disk.Used = rnd.Next(1, disk.Total);
+            //HACKME: Prevent exception
+            try
+            {
+                disk.Total = rnd.Next(1, 1000);
+                disk.Used = rnd.Next(1, disk.Total);
+            }
+            catch (Exception e)
+            {
+                
+            }
 
             return disk;
         }
