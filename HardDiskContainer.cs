@@ -31,7 +31,7 @@ namespace GreyconChallenge.Base
 
         public HardDisk GetDisk(int index)
         {
-            if (index > 0 || index >= _disks.Count)
+            if (index < 0 || index >= _disks.Count)
             {
                 throw new HardDiskException("Index is not valid");
             }
@@ -41,7 +41,7 @@ namespace GreyconChallenge.Base
 
         public void DeleteDisk(int index)
         {
-            if (index > 0 || index >= _disks.Count)
+            if (index < 0 || index >= _disks.Count)
             {
                 throw new HardDiskException("Index is not valid");
             }
@@ -51,7 +51,7 @@ namespace GreyconChallenge.Base
 
         public void SetDiskUsed(int index, int size)
         {
-            if (index > 0 || index >= _disks.Count)
+            if (index < 0 || index >= _disks.Count)
             {
                 throw new HardDiskException("Index is not valid");
             }
@@ -61,7 +61,7 @@ namespace GreyconChallenge.Base
         
         public void SetDiskTotal(int index, int size)
         {
-            if (index > 0 || index >= _disks.Count)
+            if (index < 0 || index >= _disks.Count)
             {
                 throw new HardDiskException("Index is not valid");
             }
