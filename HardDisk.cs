@@ -6,8 +6,8 @@ namespace GreyconChallenge.Base
 {
     public class HardDisk
     {
-        private int _used;
-        private int _total;
+        private int _used = 1000;
+        private int _total = 1000;
 
         public HardDisk()
         {
