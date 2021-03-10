@@ -29,6 +29,26 @@ namespace GreyconChallenge.Base
             _disks.RemoveAt(index);
         }
 
+        public void SetDiskUsed(int index, int size)
+        {
+            if (index > 0 || index >= _disks.Count)
+            {
+                throw new HardDiskException("Index is not valid");
+            }
+
+            _disks[index].Used = size;
+        }
+        
+        public void SetDiskTotal(int index, int size)
+        {
+            if (index > 0 || index >= _disks.Count)
+            {
+                throw new HardDiskException("Index is not valid");
+            }
+            
+            _disks[index].Total = size;
+        }
+
         public HardDisk[] ListDisks()
         {
             return _disks.ToArray();
