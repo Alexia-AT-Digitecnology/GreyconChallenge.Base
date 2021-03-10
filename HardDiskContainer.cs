@@ -132,6 +132,8 @@ namespace GreyconChallenge.Base
                 {
                     if (i != 0 && _disks[i].Used > 0 && _disks[i - 1].Free > 0)
                     {
+                        Console.WriteLine("DISK[i] USED: {0} DISK [i - 1] FREE {1}", _disks[i].Used,
+                            _disks[i - 1].Free);
                         dataMoved = true;
                         _disks[i].MoveData(_disks[i - 1].Free, _disks[i - 1]);
                         for (int a = 0; a <= this.DiskCount() - 1; a++)
