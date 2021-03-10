@@ -82,7 +82,17 @@ namespace GreyconChallenge.Base
         public int Preconciliate()
         {
             // Create a copy of the drives
-            List<HardDisk> diskscopy = new List<HardDisk>(_disks.ToArray());
+            List<HardDisk> diskscopy = new List<HardDisk>();
+
+            foreach (HardDisk disk in _disks)
+            {
+                HardDisk ndisk = new HardDisk();
+
+                ndisk.Total = disk.Total;
+                ndisk.Used = disk.Used;
+                
+                diskscopy.Add(ndisk);
+            }
 
             // Make conciliation
             bool dataMoved = true;
@@ -93,7 +103,7 @@ namespace GreyconChallenge.Base
 
                 for (int i = diskscopy.Count - 1; i >= 0; i--)
                 {
-                    if (i != 0 && _disks[i].Used > 0 && diskscopy[i - 1].Free > 0)
+                    if (i != 0 && diskscopy[i].Used > 0 && diskscopy[i - 1].Free > 0)
                     {
                         dataMoved = true;
                         diskscopy[i].MoveData(diskscopy[i - 1].Free, diskscopy[i - 1]);
@@ -108,11 +118,11 @@ namespace GreyconChallenge.Base
             }
             
             // Remove unused disks
-            foreach (HardDisk disk in diskscopy)
+            for (int i = diskscopy.Count - 1; i >= 0; i--) 
             {
-                if (disk.Used == 0)
+                if (diskscopy[i].Used == 0)
                 {
-                    diskscopy.Remove(disk);
+                    diskscopy.RemoveAt(i);
                 }
             }
 
@@ -145,11 +155,11 @@ namespace GreyconChallenge.Base
             }
             
             // Remove unused disks
-            foreach (HardDisk disk in _disks)
+            for (int i = _disks.Count - 1; i >= 0; i--) 
             {
-                if (disk.Used == 0)
+                if (_disks[i].Used == 0)
                 {
-                    _disks.Remove(disk);
+                    _disks.RemoveAt(i);
                 }
             }
         }
