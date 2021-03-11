@@ -4,16 +4,28 @@ using System.Runtime.CompilerServices;
 
 namespace GreyconChallenge.Base
 {
+    /// <summary>
+    /// Hard disk class
+    /// </summary>
     public class HardDisk
     {
         private int _used = 1000;
         private int _total = 1000;
 
+        /// <summary>
+        /// Public constructor
+        /// </summary>
         public HardDisk()
         {
             
         }
 
+        /// <summary>
+        /// Constructor with parameters
+        /// </summary>
+        /// <param name="used">Used MB</param>
+        /// <param name="total">Total MB</param>
+        /// <exception cref="HardDiskException">A hard disk exception is thrown</exception>
         public HardDisk(int used, int total)
         {
             if (used < 1 || used > 1000)
@@ -34,7 +46,10 @@ namespace GreyconChallenge.Base
             _used = used;
             _total = total;
         }
-        
+        /// <summary>
+        /// Used MB
+        /// </summary>
+        /// <exception cref="HardDiskException">A hard disk exception is thrown</exception>
         public int Used
         {
             get => _used;
@@ -54,6 +69,10 @@ namespace GreyconChallenge.Base
             } 
         }
         
+        /// <summary>
+        /// Total MB
+        /// </summary>
+        /// <exception cref="HardDiskException">A hard disk exception is thrown</exception>
         public int Total
         {
             get => _total;
@@ -73,8 +92,17 @@ namespace GreyconChallenge.Base
             } 
         }
 
+        /// <summary>
+        /// Free MB
+        /// </summary>
         public int Free => _total - _used;
 
+        /// <summary>
+        /// Moves data from this disk to another
+        /// </summary>
+        /// <param name="size">MB to move</param>
+        /// <param name="dest">Destination disk</param>
+        /// <exception cref="HardDiskException">A hard disk exception is thrown</exception>
         public void MoveData(int size, HardDisk dest)
         {
             // Check if size to move is allowed
@@ -97,6 +125,10 @@ namespace GreyconChallenge.Base
             }
         }
 
+        /// <summary>
+        /// Generates a random hard disk
+        /// </summary>
+        /// <returns>A random hard disk</returns>
         public static HardDisk GenerateRandom()
         {
             Random rnd = new Random();
